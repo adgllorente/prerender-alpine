@@ -3,7 +3,6 @@ ENV CHROME_BIN=/usr/bin/chromium-browser
 ENV CHROME_PATH=/usr/lib/chromium/
 
 COPY ./package.json .
-COPY ./server.js .
 
 # use edge repositories
 # RUN sed -i -e 's/v3\.8/edge/g' /etc/apk/repositories
@@ -14,6 +13,8 @@ RUN apk add --update-cache chromium \
 
 # install npm packages
 RUN npm install --no-package-lock
+
+COPY ./server.js .
 
 EXPOSE 3000
 
