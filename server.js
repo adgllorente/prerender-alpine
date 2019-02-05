@@ -9,6 +9,7 @@ const server = prerender({
   ],
   forwardHeaders: true,
   chromeLocation: "/usr/bin/chromium-browser",
+  waitAfterLastRequest: 1000,
   userAgent:
     "Mozilla/5.0 (Windows; U; Windows NT 10.0; en-US) AppleWebKit/604.1.38 (KHTML, like Gecko) Chrome/68.0.3325.162"
 });
